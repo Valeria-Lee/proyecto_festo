@@ -51,10 +51,10 @@ fun NavWrapper() {
             Home(navController)
         }
         composable<Pneumatics>{
-            PneumaticScreen()
+            PneumaticScreen { navController.navigate(route = Home) }
         }
         composable<Hydraulic>{
-            HydraulicScreen()
+            HydraulicScreen { navController.navigate(route = Home) }
         }
     }
 }
@@ -105,4 +105,9 @@ fun Home(navController: NavController) {
                 fontSize = 36.sp)
         }
     }
+}
+
+@Composable
+fun selectButton() {
+    // Aqui va a ir la estructura de los botones.
 }
