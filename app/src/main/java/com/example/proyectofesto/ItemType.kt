@@ -1,4 +1,5 @@
 package com.example.proyectofesto
 
-data class ItemType(var title: String, var imgId: Int)
-// por anadir datasheet y diagrama
+import android.net.Uri
+
+data class ItemType(var title: String, var imgId: Int, var diagramImgId: Int)

@@ -13,20 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-var HydraulicItems: List<ItemType> = listOf(
-    ItemType("MODELO #1", R.drawable.logo_uacam),
-    ItemType("MODELO #2", R.drawable.logo_uacam),
-    ItemType("MODELO #3", R.drawable.logo_uacam),
-    ItemType("MODELO #4", R.drawable.logo_uacam),
-    ItemType("MODELO #1", R.drawable.logo_uacam),
-    ItemType("MODELO #2", R.drawable.logo_uacam),
-    ItemType("MODELO #3", R.drawable.logo_uacam),
-    ItemType("MODELO #4", R.drawable.logo_uacam),
-    ItemType("MODELO #1", R.drawable.logo_uacam),
-    ItemType("MODELO #2", R.drawable.logo_uacam),
-    ItemType("MODELO #3", R.drawable.logo_uacam),
-    ItemType("MODELO #4", R.drawable.logo_uacam),
-)
+var HydraulicItems: List<ItemType> = listOf()
 
 @Composable
 fun HydraulicScreen(goBackHome: () -> Unit) {

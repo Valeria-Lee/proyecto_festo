@@ -1,7 +1,5 @@
 package com.example.proyectofesto
 
-import android.annotation.SuppressLint
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -12,7 +10,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -41,7 +38,7 @@ fun ItemComponent(dataItem: ItemType) {
                         BorderStroke(8.dp, Color.Yellow), // TODO: Cambiar el color del borde
                         RectangleShape
                     )
-                    .clickable { Toast.makeText(context, "DISTE CLICK AL MODELO", Toast.LENGTH_SHORT).show()}
+                    .clickable { Toast.makeText(context, "DISTE CLICK AL MODELO", Toast.LENGTH_SHORT).show() }
             )
         Text(
             text = dataItem.title,
