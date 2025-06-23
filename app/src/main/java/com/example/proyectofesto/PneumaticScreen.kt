@@ -12,13 +12,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 var PneumaticItems: List<ItemType> = listOf(
     ItemType("Valvula neumatica 3/2 vias con accionamiento de rodillo normalmente abierta", R.drawable.valvula_neumatica_abierta, R.drawable.valvula_abierta_diagrama),
 )
 
 @Composable
-fun PneumaticScreen(goBackHome: () -> Unit) {
+fun PneumaticScreen(navController: NavController) {
     Column(
         Modifier.fillMaxSize()
             .padding(16.dp),
@@ -33,11 +34,11 @@ fun PneumaticScreen(goBackHome: () -> Unit) {
                 text = "Neumática",
                 fontSize = 40.sp
             )
-            Button(onClick = { goBackHome() }) {
+            Button(onClick = {  navController.navigate(route = Home) }) {
                 Text(text = "Regresar a casa",
                     fontSize = 24.sp)
             }
         }
-        ItemList(PneumaticItems)
+        ItemList(PneumaticItems, navController)
     }
 }

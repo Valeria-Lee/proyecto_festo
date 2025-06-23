@@ -12,11 +12,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 var HydraulicItems: List<ItemType> = listOf()
 
 @Composable
-fun HydraulicScreen(goBackHome: () -> Unit) {
+fun HydraulicScreen(navController: NavController) {
 
     Column(
         Modifier.fillMaxSize()
@@ -33,11 +34,11 @@ fun HydraulicScreen(goBackHome: () -> Unit) {
                 fontSize = 40.sp
             )
 
-            Button(onClick = { goBackHome() }) {
+            Button(onClick = { navController.navigate(route = Home) }) {
                 Text(text = "Regresar a casa",
                     fontSize = 24.sp)
             }
         }
-        ItemList(HydraulicItems)
+        ItemList(HydraulicItems, navController)
     }
 }

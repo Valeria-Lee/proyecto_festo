@@ -10,3 +10,6 @@ object Pneumatics
 
 @Serializable
 object Hydraulic
+
+@Serializable
+object ItemScreen

@@ -18,11 +18,15 @@ import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -46,15 +50,19 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun NavWrapper() {
     val navController = rememberNavController()
+
     NavHost(navController = navController, startDestination = Home) {
         composable<Home>{
             Home(navController)
         }
         composable<Pneumatics>{
-            PneumaticScreen { navController.navigate(route = Home) }
+            PneumaticScreen(navController)
         }
         composable<Hydraulic>{
-            HydraulicScreen { navController.navigate(route = Home) }
+            HydraulicScreen(navController)
+        }
+        composable<ItemScreen> {
+            ItemScreen(navController)
         }
     }
 }

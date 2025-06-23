@@ -15,20 +15,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
+// Componente de item que forma parte de las listas
 @Composable
-fun ItemComponent(dataItem: ItemType) {
+fun ItemComponent(dataItem: ItemType, navController: NavController) {
+    // moverse con clickable a ItemScreen segun el dataItem
+    // renderizar ItemScreen(item)
+
     Row(
         Modifier
             .padding(16.dp)
             .fillMaxSize(),
         horizontalArrangement = Arrangement.SpaceAround
     ) {
-        val context = LocalContext.current
         Image(
                 painter = painterResource(id = dataItem.imgId),
                 contentDescription = dataItem.title,
@@ -38,7 +41,9 @@ fun ItemComponent(dataItem: ItemType) {
                         BorderStroke(8.dp, Color.Yellow), // TODO: Cambiar el color del borde
                         RectangleShape
                     )
-                    .clickable { Toast.makeText(context, "DISTE CLICK AL MODELO", Toast.LENGTH_SHORT).show() }
+                    .clickable {
+                        navController.navigate(route = ItemScreen)
+                    }
             )
         Text(
             text = dataItem.title,
