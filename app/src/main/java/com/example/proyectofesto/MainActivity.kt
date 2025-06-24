@@ -18,15 +18,12 @@ import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -62,7 +59,7 @@ fun NavWrapper() {
             HydraulicScreen(navController)
         }
         composable<ItemScreen> {
-            ItemScreen(navController)
+            ItemScreen { navController.popBackStack() }
         }
     }
 }

@@ -34,7 +34,7 @@ fun PneumaticScreen(navController: NavController) {
                 text = "Neumática",
                 fontSize = 40.sp
             )
-            Button(onClick = {  navController.navigate(route = Home) }) {
+            Button(onClick = { navController.navigate(route = Home) }) {
                 Text(text = "Regresar a casa",
                     fontSize = 24.sp)
             }

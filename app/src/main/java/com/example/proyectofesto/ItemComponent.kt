@@ -1,6 +1,5 @@
 package com.example.proyectofesto
 
-import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
@@ -23,9 +22,6 @@ import androidx.navigation.NavController
 // Componente de item que forma parte de las listas
 @Composable
 fun ItemComponent(dataItem: ItemType, navController: NavController) {
-    // moverse con clickable a ItemScreen segun el dataItem
-    // renderizar ItemScreen(item)
-
     Row(
         Modifier
             .padding(16.dp)
@@ -42,6 +38,7 @@ fun ItemComponent(dataItem: ItemType, navController: NavController) {
                         RectangleShape
                     )
                     .clickable {
+                        SelectedItem.item = dataItem
                         navController.navigate(route = ItemScreen)
                     }
             )

@@ -13,7 +13,3 @@ fun ItemList(insertedItems: List<ItemType>, navController: NavController) {
         }
     }
 }
-
-fun getSelectedItem(insertedItems: List<ItemType>) {
-
-}
